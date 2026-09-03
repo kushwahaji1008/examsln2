@@ -1,0 +1,9 @@
+const fs = require('fs');
+let content = fs.readFileSync('src/components/layout/Header.tsx', 'utf8');
+
+content = content.replace(
+  "{walletBalance !== null && (",
+  "{(walletBalance !== null && walletBalance !== undefined) && ("
+);
+
+fs.writeFileSync('src/components/layout/Header.tsx', content);

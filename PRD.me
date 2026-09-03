@@ -1,0 +1,103 @@
+(Project) Exam Platform — Frontend PRD
+
+1. Overview
+The Exam Platform frontend is a single-page application (SPA) that provides students, teachers, and admins with tools to manage exams, questions, courses, and learning progress. It pairs with existing backend APIs (auth, admin, student, teacher) and focuses on secure, accessible, and performant exam workflows.
+
+2. Objectives and Success Metrics
+- Primary objective: enable secure creation, delivery, and review of exams and question banks.
+- Success metrics:
+	- Authoring velocity: time to create a question decreases by 50% vs manual spreadsheet workflows.
+	- Exam completion rate: >= 95% for scheduled exam takers (system reliability).
+	- Load performance: First Contentful Paint (FCP) < 1.5s on 3G simulated mobile.
+	- Error rate: client-side errors < 0.5% of sessions.
+
+3. Target Users
+- Students: take scheduled and on-demand exams, view results, resume in-progress attempts.
+- Teachers: create/edit questions and exams, grade subjective answers, view analytics.
+- Admins: manage user roles, review logs, configure global settings.
+
+4. Core Features (MVP)
+- Authentication & Authorization
+	- Login, registration, token refresh, role-based routes (student/teacher/admin).
+- Question Bank
+	- Create, edit, tag, preview, import/export questions (MCQ, multi-select, short answer).
+	- Filters (subject, difficulty, tags) and bulk actions.
+- Exam Builder & Scheduling
+	- Assemble papers from question bank, set time limits, availability windows, and shuffle options.
+	- Preview mode for teachers and dry-run for admins.
+- Exam Delivery (Student Experience)
+	- Start/resume an attempt, autosave answers, offline resilience for short network loss.
+	- Timers, progress indicator, navigation between sections, and submission handling.
+- Results & Analytics
+	- Automatic scoring for objective items, manual grading workflow for subjective items.
+	- Per-question item analysis, student performance history, exportable reports (CSV/PDF).
+- Admin Console
+	- User/role management, system logs, audit trails, global configuration.
+
+5. Non-Functional Requirements
+- Security: follow OWASP guidelines; use HTTPS, secure token storage (HttpOnly cookies or secure storage), role-based access checks in UI flows.
+- Accessibility: WCAG 2.1 AA conformance for all public flows (keyboard navigation, ARIA labels, color contrast).
+- Performance: code-splitting and lazy loading of feature routes; keep initial bundle small.
+- Internationalization: support text extraction and locale switching (i18n-ready strings).
+
+6. UX & UI Guidelines
+- Consistent layout using `AppShell`, `Header`, and `Sidebar` components.
+- Reusable components: `Button`, `Card`, `Table`, and `PageHeader` to ensure visual consistency.
+- Mobile-first responsive design; priority given to exam-taking screens for smaller viewports.
+
+7. Technical Stack & Architecture
+- Framework: React + TypeScript, Vite build.
+- State: hooks + context; local feature hooks live in `src/features/*/hooks`.
+- API client: centralized `services/api/client.ts` and modular `services/api/*.ts` per domain.
+- Routing: `AppRouter`, `RoleRouter`, and protected routes for role enforcement.
+
+8. API Contracts (high-level)
+- Auth: sign-in, sign-up, refresh, sign-out; tokens and role claims.
+- Questions: CRUD endpoints, query by filters, bulk import/export.
+- Exams: create, schedule, start attempt, submit attempt, fetch results.
+- Grading: endpoints for manual grading updates and publishing results.
+
+9. Data & Persistence
+- Client persists in-progress attempt state locally (IndexedDB or localStorage) with encrypt-at-rest considerations for sensitive answers.
+- Caching: short-lived cache for question previews and exam metadata; invalidate on edits.
+
+10. Security & Privacy
+- Do not store PII in localStorage; prefer server-side sessions or secure cookies for tokens.
+- Input validation and XSS protections in all rich-text/HTML fields (escape and sanitize before render).
+- Audit logging for important admin/teacher actions.
+
+11. Observability & Monitoring
+- Integrate error tracking (Sentry or similar) and expose key events: exam start/submit, grading publish, user auth failures.
+- Frontend metrics: page load performance, API latency, client error rates.
+
+12. Acceptance Criteria (MVP)
+- Students can take an exam end-to-end: start → answer → autosave → submit → view results for objective items.
+- Teachers can create and schedule an exam and see submitted attempts for grading.
+- Role-based routes correctly block unauthorized access.
+- Pages meet WCAG 2.1 AA baseline and basic performance targets.
+
+13. Milestones & Timeline (suggested)
+- Week 0–1: Scaffolding, auth flows, core layout and routing.
+- Week 2: Question bank CRUD, filtering, and question preview.
+- Week 3: Exam builder, scheduling, and student exam delivery MVP.
+- Week 4: Results, manual grading workflow, analytics export.
+- Week 5: Accessibility fixes, performance tuning, end-to-end QA.
+
+14. Risks & Mitigations
+- Risk: Offline/poor network causes lost answers. Mitigation: frequent autosave + local persistence + server reconciliation.
+- Risk: Manual grading scale slows teacher workflow. Mitigation: bulk grading tools and improved item filtering.
+
+15. Next Steps
+- Confirm backend API shapes with `services/api/*` owners and add contract tests.
+- Implement end-to-end happy-path for a student exam attempt.
+- Add analytics events and error tracking before user-facing rollout.
+
+Appendix: Relevant files and folders
+- `src/app/router` — routing and role-based routes
+- `src/features/question-bank` — question UI, editor and services
+- `src/features/student` — student exam flows and dashboard
+- `src/services/api` — centralized API client and domain endpoints
+
+---
+This PRD is intentionally focused on the frontend MVP scope. If you'd like, I can expand any section, convert to a checklist, or open a draft PR implementing the core routes and components.
+

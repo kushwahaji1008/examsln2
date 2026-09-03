@@ -1,0 +1,140 @@
+
+> frontend@0.1.0 lint
+> eslint .
+
+
+/app/applet/src/app/router/AppRouter.tsx
+  47:8  warning  'LiveClasses' is defined but never used       @typescript-eslint/no-unused-vars
+  48:8  warning  'LiveStreamViewer' is defined but never used  @typescript-eslint/no-unused-vars
+  60:8  warning  'CoursesList' is defined but never used       @typescript-eslint/no-unused-vars
+  61:8  warning  'CourseDetails' is defined but never used     @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/auth/components/ProfilePreferencesTab.tsx
+  2:10  warning  'Bell' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/courses/CourseDetails.tsx
+  4:54  warning  'PlayCircle' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/courses/CoursesList.tsx
+  4:23  warning  'PaymentReceipt' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/courses/components/CourseCheckoutModal.tsx
+  5:3  warning  'Sparkles' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/student/AttemptRunner.tsx
+    1:38  warning  'useCallback' is defined but never used                                                                              @typescript-eslint/no-unused-vars
+   13:72  warning  'CheckCircle2' is defined but never used                                                                             @typescript-eslint/no-unused-vars
+   13:95  warning  'Save' is defined but never used                                                                                     @typescript-eslint/no-unused-vars
+   14:52  warning  'Question' is defined but never used                                                                                 @typescript-eslint/no-unused-vars
+   59:16  warning  'err' is defined but never used                                                                                      @typescript-eslint/no-unused-vars
+   66:6   warning  React Hook useEffect has a missing dependency: 'loadQuestion'. Either include it or remove the dependency array      react-hooks/exhaustive-deps
+   84:6   warning  React Hook useEffect has a missing dependency: 'handleAutoSubmit'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  112:14  warning  'err' is defined but never used                                                                                      @typescript-eslint/no-unused-vars
+  131:14  warning  'err' is defined but never used                                                                                      @typescript-eslint/no-unused-vars
+  203:14  warning  'err' is defined but never used                                                                                      @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/student/StudentDashboard.tsx
+   2:44  warning  'BookOpen' is defined but never used      @typescript-eslint/no-unused-vars
+   2:54  warning  'Layers' is defined but never used        @typescript-eslint/no-unused-vars
+  13:8   warning  'ScheduleCard' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/student/pages/ActiveExam.tsx
+    1:38  warning  'useRef' is defined but never used                                                                                   @typescript-eslint/no-unused-vars
+    4:37  warning  'ShieldAlert' is defined but never used                                                                              @typescript-eslint/no-unused-vars
+    4:50  warning  'Flag' is defined but never used                                                                                     @typescript-eslint/no-unused-vars
+    5:39  warning  'Maximize' is defined but never used                                                                                 @typescript-eslint/no-unused-vars
+    5:49  warning  'Minimize' is defined but never used                                                                                 @typescript-eslint/no-unused-vars
+   76:6   warning  React Hook useEffect has a missing dependency: 'handleAutoSubmit'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  141:14  warning  'err' is defined but never used                                                                                      @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/student/pages/CourseDetails.tsx
+  623:49  warning  'iIdx' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/student/pages/ExamDetails.tsx
+  4:21  warning  'getExamAttempts' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/student/pages/LiveStreamViewer.tsx
+  3:41  warning  'Mic' is defined but never used                 @typescript-eslint/no-unused-vars
+  3:46  warning  'MicOff' is defined but never used              @typescript-eslint/no-unused-vars
+  3:54  warning  'VideoOff' is defined but never used            @typescript-eslint/no-unused-vars
+  6:11  warning  'sessionId' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/student/pages/ResultView.tsx
+  5:59  warning  'Clock' is defined but never used      @typescript-eslint/no-unused-vars
+  5:66  warning  'BarChart3' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/student/pages/StudentCourses.tsx
+   47:10  warning  'enrollingMap' is assigned a value but never used                                                                                                                                              @typescript-eslint/no-unused-vars
+   48:10  warning  'requestedMap' is assigned a value but never used                                                                                                                                              @typescript-eslint/no-unused-vars
+   48:24  warning  'setRequestedMap' is assigned a value but never used                                                                                                                                           @typescript-eslint/no-unused-vars
+  115:9   warning  The 'getBaseCourses' function makes the dependencies of useMemo Hook (at line 147) change on every render. To fix this, wrap the definition of 'getBaseCourses' in its own useCallback() Hook  react-hooks/exhaustive-deps
+  115:9   warning  The 'getBaseCourses' function makes the dependencies of useMemo Hook (at line 153) change on every render. To fix this, wrap the definition of 'getBaseCourses' in its own useCallback() Hook  react-hooks/exhaustive-deps
+
+/app/applet/src/features/student/pages/StudentExams.tsx
+  6:28  warning  'getActiveExams' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/teacher/pages/TeacherAnalytics.tsx
+  2:10  warning  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/teacher/pages/TeacherCourseCurriculum.tsx
+    4:44  warning  'Move' is defined but never used                                                                              @typescript-eslint/no-unused-vars
+    5:26  warning  'Save' is defined but never used                                                                              @typescript-eslint/no-unused-vars
+    5:32  warning  'X' is defined but never used                                                                                 @typescript-eslint/no-unused-vars
+    7:59  warning  'updateSection' is defined but never used                                                                     @typescript-eslint/no-unused-vars
+   10:23  warning  'ExamSection' is defined but never used                                                                       @typescript-eslint/no-unused-vars
+   33:6   warning  React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  197:51  warning  'iIdx' is defined but never used                                                                              @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/teacher/pages/TeacherCourseDetails.tsx
+   3:83  warning  'Eye' is defined but never used  @typescript-eslint/no-unused-vars
+  39:14  warning  'err' is defined but never used  @typescript-eslint/no-unused-vars
+  54:14  warning  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/teacher/pages/TeacherCourses.tsx
+   6:8   warning  'PageHeader' is defined but never used  @typescript-eslint/no-unused-vars
+  16:15  warning  'err' is defined but never used         @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/teacher/pages/TeacherExamAttempts.tsx
+   4:42  warning  'Square' is defined but never used                                                                            @typescript-eslint/no-unused-vars
+  29:6   warning  React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+/app/applet/src/features/teacher/pages/TeacherExamDetails.tsx
+    5:16  warning  'PlayCircle' is defined but never used  @typescript-eslint/no-unused-vars
+   61:14  warning  'err' is defined but never used         @typescript-eslint/no-unused-vars
+   81:14  warning  'err' is defined but never used         @typescript-eslint/no-unused-vars
+  101:14  warning  'err' is defined but never used         @typescript-eslint/no-unused-vars
+  115:14  warning  'err' is defined but never used         @typescript-eslint/no-unused-vars
+  129:14  warning  'err' is defined but never used         @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/teacher/pages/TeacherExams.tsx
+  15:15  warning  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/teacher/pages/TeacherLiveClasses.tsx
+  2:10  warning  'Link' is defined but never used        @typescript-eslint/no-unused-vars
+  3:27  warning  'User' is defined but never used        @typescript-eslint/no-unused-vars
+  3:33  warning  'ArrowRight' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/teacher/pages/TeacherQuestionNew.tsx
+  55:43  warning  'i' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/teacher/pages/TeacherQuestions.tsx
+  4:47  warning  'PlayCircle' is defined but never used    @typescript-eslint/no-unused-vars
+  4:59  warning  'Clock' is defined but never used         @typescript-eslint/no-unused-vars
+  4:66  warning  'CheckCircle2' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/teacher/pages/TeacherResultReview.tsx
+   3:43  warning  'CheckCircle2' is defined but never used                                                                      @typescript-eslint/no-unused-vars
+   3:57  warning  'XCircle' is defined but never used                                                                           @typescript-eslint/no-unused-vars
+  22:6   warning  React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+/app/applet/src/services/api/coursesApi2.ts
+  3:32  warning  'CourseOverviewDto' is defined but never used          @typescript-eslint/no-unused-vars
+  3:51  warning  'StudentDashboardCourseDto' is defined but never used  @typescript-eslint/no-unused-vars
+  3:78  warning  'CourseAccessDto' is defined but never used            @typescript-eslint/no-unused-vars
+  3:95  warning  'CourseStatsDto' is defined but never used             @typescript-eslint/no-unused-vars
+
+/app/applet/src/services/api/walletApi.ts
+  16:12  warning  'error' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 79 problems (0 errors, 79 warnings)
+

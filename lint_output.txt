@@ -1,0 +1,309 @@
+
+> frontend@0.1.0 lint
+> eslint .
+
+
+/app/applet/src/app/router/AppRouter.tsx
+  44:8  warning  'LiveClasses' is defined but never used       @typescript-eslint/no-unused-vars
+  45:8  warning  'LiveStreamViewer' is defined but never used  @typescript-eslint/no-unused-vars
+  57:8  warning  'CoursesList' is defined but never used       @typescript-eslint/no-unused-vars
+  58:8  warning  'CourseDetails' is defined but never used     @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/auth/components/ProfilePreferencesTab.tsx
+   2:10  warning  'Bell' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       @typescript-eslint/no-unused-vars
+  56:14  error    Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+/app/applet/src/features/auth/components/ProfilePreferencesTab.tsx:56:14
+  54 |           </div>
+  55 |           <div className="grid gap-3 sm:grid-cols-2">
+> 56 |             <Toggle 
+     |              ^^^^^^ This component is created during render
+  57 |               label="Exam Reminders" 
+  58 |               desc="Get notified 24h before an exam."
+  59 |               checked={prefs.emailExams}
+
+/app/applet/src/features/auth/components/ProfilePreferencesTab.tsx:30:18
+  28 |   };
+  29 |
+> 30 |   const Toggle = ({ label, desc, checked, onChange }: any) => (
+     |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 31 |     <div className="flex items-center justify-between p-4 rounded-xl border border-border bg-background hover:border-primary/30 transition">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 32 |       <div>
+     …
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 42 |     </div>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 43 |   );
+     | ^^^^ The component is created during render here
+  44 |
+  45 |   return (
+  46 |     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4">                                  react-hooks/static-components
+  62:14  error    Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+/app/applet/src/features/auth/components/ProfilePreferencesTab.tsx:62:14
+  60 |               onChange={(val: boolean) => setPrefs({...prefs, emailExams: val})}
+  61 |             />
+> 62 |             <Toggle 
+     |              ^^^^^^ This component is created during render
+  63 |               label="Course Updates" 
+  64 |               desc="New curriculum or announcements."
+  65 |               checked={prefs.emailCourses}
+
+/app/applet/src/features/auth/components/ProfilePreferencesTab.tsx:30:18
+  28 |   };
+  29 |
+> 30 |   const Toggle = ({ label, desc, checked, onChange }: any) => (
+     |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 31 |     <div className="flex items-center justify-between p-4 rounded-xl border border-border bg-background hover:border-primary/30 transition">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 32 |       <div>
+     …
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 42 |     </div>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 43 |   );
+     | ^^^^ The component is created during render here
+  44 |
+  45 |   return (
+  46 |     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4">       react-hooks/static-components
+  68:14  error    Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+/app/applet/src/features/auth/components/ProfilePreferencesTab.tsx:68:14
+  66 |               onChange={(val: boolean) => setPrefs({...prefs, emailCourses: val})}
+  67 |             />
+> 68 |             <Toggle 
+     |              ^^^^^^ This component is created during render
+  69 |               label="Promotions" 
+  70 |               desc="Weekly newsletters and offers."
+  71 |               checked={prefs.emailPromos}
+
+/app/applet/src/features/auth/components/ProfilePreferencesTab.tsx:30:18
+  28 |   };
+  29 |
+> 30 |   const Toggle = ({ label, desc, checked, onChange }: any) => (
+     |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 31 |     <div className="flex items-center justify-between p-4 rounded-xl border border-border bg-background hover:border-primary/30 transition">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 32 |       <div>
+     …
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 42 |     </div>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 43 |   );
+     | ^^^^ The component is created during render here
+  44 |
+  45 |   return (
+  46 |     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4">            react-hooks/static-components
+  84:14  error    Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+/app/applet/src/features/auth/components/ProfilePreferencesTab.tsx:84:14
+  82 |           </div>
+  83 |           <div className="grid gap-3 sm:grid-cols-2">
+> 84 |             <Toggle 
+     |              ^^^^^^ This component is created during render
+  85 |               label="Push: Exam Alerts" 
+  86 |               desc="Real-time alerts for active exams."
+  87 |               checked={prefs.pushExams}
+
+/app/applet/src/features/auth/components/ProfilePreferencesTab.tsx:30:18
+  28 |   };
+  29 |
+> 30 |   const Toggle = ({ label, desc, checked, onChange }: any) => (
+     |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 31 |     <div className="flex items-center justify-between p-4 rounded-xl border border-border bg-background hover:border-primary/30 transition">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 32 |       <div>
+     …
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 42 |     </div>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 43 |   );
+     | ^^^^ The component is created during render here
+  44 |
+  45 |   return (
+  46 |     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4">                              react-hooks/static-components
+  90:14  error    Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+/app/applet/src/features/auth/components/ProfilePreferencesTab.tsx:90:14
+  88 |               onChange={(val: boolean) => setPrefs({...prefs, pushExams: val})}
+  89 |             />
+> 90 |             <Toggle 
+     |              ^^^^^^ This component is created during render
+  91 |               label="Push: Direct Messages" 
+  92 |               desc="When instructor replies to Q&A."
+  93 |               checked={prefs.pushMessages}
+
+/app/applet/src/features/auth/components/ProfilePreferencesTab.tsx:30:18
+  28 |   };
+  29 |
+> 30 |   const Toggle = ({ label, desc, checked, onChange }: any) => (
+     |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 31 |     <div className="flex items-center justify-between p-4 rounded-xl border border-border bg-background hover:border-primary/30 transition">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 32 |       <div>
+     …
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 42 |     </div>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 43 |   );
+     | ^^^^ The component is created during render here
+  44 |
+  45 |   return (
+  46 |     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4">  react-hooks/static-components
+  96:14  error    Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+/app/applet/src/features/auth/components/ProfilePreferencesTab.tsx:96:14
+  94 |               onChange={(val: boolean) => setPrefs({...prefs, pushMessages: val})}
+  95 |             />
+> 96 |             <Toggle 
+     |              ^^^^^^ This component is created during render
+  97 |               label="SMS Alerts" 
+  98 |               desc="Critical security and schedule changes."
+  99 |               checked={prefs.smsAlerts}
+
+/app/applet/src/features/auth/components/ProfilePreferencesTab.tsx:30:18
+  28 |   };
+  29 |
+> 30 |   const Toggle = ({ label, desc, checked, onChange }: any) => (
+     |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 31 |     <div className="flex items-center justify-between p-4 rounded-xl border border-border bg-background hover:border-primary/30 transition">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 32 |       <div>
+     …
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 42 |     </div>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 43 |   );
+     | ^^^^ The component is created during render here
+  44 |
+  45 |   return (
+  46 |     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4">     react-hooks/static-components
+
+/app/applet/src/features/courses/CourseDetails.tsx
+  4:54  warning  'PlayCircle' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/courses/CoursesList.tsx
+  4:23  warning  'PaymentReceipt' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/courses/components/CourseCheckoutModal.tsx
+  5:3  warning  'Sparkles' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/student/AttemptRunner.tsx
+    1:38  warning  'useCallback' is defined but never used                                                                              @typescript-eslint/no-unused-vars
+   13:72  warning  'CheckCircle2' is defined but never used                                                                             @typescript-eslint/no-unused-vars
+   13:95  warning  'Save' is defined but never used                                                                                     @typescript-eslint/no-unused-vars
+   14:52  warning  'Question' is defined but never used                                                                                 @typescript-eslint/no-unused-vars
+   59:16  warning  'err' is defined but never used                                                                                      @typescript-eslint/no-unused-vars
+   66:6   warning  React Hook useEffect has a missing dependency: 'loadQuestion'. Either include it or remove the dependency array      react-hooks/exhaustive-deps
+   84:6   warning  React Hook useEffect has a missing dependency: 'handleAutoSubmit'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  112:14  warning  'err' is defined but never used                                                                                      @typescript-eslint/no-unused-vars
+  131:14  warning  'err' is defined but never used                                                                                      @typescript-eslint/no-unused-vars
+  203:14  warning  'err' is defined but never used                                                                                      @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/student/Dashboard.tsx
+  35:9  warning  'hour' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/student/pages/CourseDetails.tsx
+  623:49  warning  'iIdx' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/student/pages/ExamDetails.tsx
+  4:21  warning  'getExamAttempts' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/student/pages/LiveStreamViewer.tsx
+  3:41  warning  'Mic' is defined but never used                 @typescript-eslint/no-unused-vars
+  3:46  warning  'MicOff' is defined but never used              @typescript-eslint/no-unused-vars
+  3:54  warning  'VideoOff' is defined but never used            @typescript-eslint/no-unused-vars
+  6:11  warning  'sessionId' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/student/pages/ResultView.tsx
+  3:59  warning  'Clock' is defined but never used      @typescript-eslint/no-unused-vars
+  3:66  warning  'BarChart3' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/student/pages/StudentCourses.tsx
+   47:10  warning  'enrollingMap' is assigned a value but never used                                                                                                                                              @typescript-eslint/no-unused-vars
+   48:10  warning  'requestedMap' is assigned a value but never used                                                                                                                                              @typescript-eslint/no-unused-vars
+   48:24  warning  'setRequestedMap' is assigned a value but never used                                                                                                                                           @typescript-eslint/no-unused-vars
+  115:9   warning  The 'getBaseCourses' function makes the dependencies of useMemo Hook (at line 147) change on every render. To fix this, wrap the definition of 'getBaseCourses' in its own useCallback() Hook  react-hooks/exhaustive-deps
+  115:9   warning  The 'getBaseCourses' function makes the dependencies of useMemo Hook (at line 153) change on every render. To fix this, wrap the definition of 'getBaseCourses' in its own useCallback() Hook  react-hooks/exhaustive-deps
+
+/app/applet/src/features/student/pages/StudentExams.tsx
+  6:28  warning  'getActiveExams' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/teacher/pages/TeacherAnalytics.tsx
+  2:10  warning  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/teacher/pages/TeacherCourseCurriculum.tsx
+    4:44  warning  'Move' is defined but never used                                                                              @typescript-eslint/no-unused-vars
+    5:26  warning  'Save' is defined but never used                                                                              @typescript-eslint/no-unused-vars
+    5:32  warning  'X' is defined but never used                                                                                 @typescript-eslint/no-unused-vars
+    7:59  warning  'updateSection' is defined but never used                                                                     @typescript-eslint/no-unused-vars
+   10:23  warning  'ExamSection' is defined but never used                                                                       @typescript-eslint/no-unused-vars
+   33:6   warning  React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  197:51  warning  'iIdx' is defined but never used                                                                              @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/teacher/pages/TeacherCourseDetails.tsx
+   3:83  warning  'Eye' is defined but never used  @typescript-eslint/no-unused-vars
+  39:14  warning  'err' is defined but never used  @typescript-eslint/no-unused-vars
+  54:14  warning  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/teacher/pages/TeacherCourses.tsx
+   6:8   warning  'PageHeader' is defined but never used  @typescript-eslint/no-unused-vars
+  16:15  warning  'err' is defined but never used         @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/teacher/pages/TeacherExamAttempts.tsx
+   4:42  warning  'Square' is defined but never used                                                                            @typescript-eslint/no-unused-vars
+  29:6   warning  React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+/app/applet/src/features/teacher/pages/TeacherExamDetails.tsx
+    5:16  warning  'PlayCircle' is defined but never used  @typescript-eslint/no-unused-vars
+   61:14  warning  'err' is defined but never used         @typescript-eslint/no-unused-vars
+   81:14  warning  'err' is defined but never used         @typescript-eslint/no-unused-vars
+  101:14  warning  'err' is defined but never used         @typescript-eslint/no-unused-vars
+  115:14  warning  'err' is defined but never used         @typescript-eslint/no-unused-vars
+  129:14  warning  'err' is defined but never used         @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/teacher/pages/TeacherExams.tsx
+  15:15  warning  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/teacher/pages/TeacherLiveClasses.tsx
+  2:10  warning  'Link' is defined but never used        @typescript-eslint/no-unused-vars
+  3:27  warning  'User' is defined but never used        @typescript-eslint/no-unused-vars
+  3:33  warning  'ArrowRight' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/teacher/pages/TeacherQuestionNew.tsx
+  55:43  warning  'i' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/teacher/pages/TeacherQuestions.tsx
+  4:47  warning  'PlayCircle' is defined but never used    @typescript-eslint/no-unused-vars
+  4:59  warning  'Clock' is defined but never used         @typescript-eslint/no-unused-vars
+  4:66  warning  'CheckCircle2' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/applet/src/features/teacher/pages/TeacherResultReview.tsx
+   3:43  warning  'CheckCircle2' is defined but never used                                                                      @typescript-eslint/no-unused-vars
+   3:57  warning  'XCircle' is defined but never used                                                                           @typescript-eslint/no-unused-vars
+  22:6   warning  React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+/app/applet/src/services/api/coursesApi2.ts
+  3:32  warning  'CourseOverviewDto' is defined but never used          @typescript-eslint/no-unused-vars
+  3:51  warning  'StudentDashboardCourseDto' is defined but never used  @typescript-eslint/no-unused-vars
+  3:78  warning  'CourseAccessDto' is defined but never used            @typescript-eslint/no-unused-vars
+  3:95  warning  'CourseStatsDto' is defined but never used             @typescript-eslint/no-unused-vars
+
+/app/applet/src/services/api/walletApi.ts
+  16:12  warning  'error' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 76 problems (6 errors, 70 warnings)
+
